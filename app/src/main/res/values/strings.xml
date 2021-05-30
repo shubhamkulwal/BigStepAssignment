@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BigStepAssignment</string>
+    <string name="video_detail_screen">Video Details Screen</string>
+    <string name="track_title">Track Title : %s</string>
+    <string name="track_author">Track Author : %s</string>
+    <string name="track_date">Track Date : %s</string>
+    <string name="track_price">Track Price : %f</string>
+</resources>

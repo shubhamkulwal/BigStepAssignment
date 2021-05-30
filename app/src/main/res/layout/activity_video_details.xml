@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+      <variable
+          name="videoDetail"
+          type="com.assignment.bigstepassignment.data.entities.VideoDetails" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activity.VideoDetailsActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="@string/video_detail_screen"
+                app:titleTextColor="@color/white" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/track_thumbnail_iv"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="16dp"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appbar"
+            app:imageUrl="@{videoDetail.artworkUrl100}"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/track_title"
+            android:layout_width="0dp"
+            android:text="@{String.format(@string/track_title,videoDetail.trackName)}"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/track_thumbnail_iv" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/track_author"
+            android:layout_width="0dp"
+            android:text="@{String.format(@string/track_author,videoDetail.artistName)}"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/track_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/track_date"
+            android:layout_width="0dp"
+            android:text="@{String.format(@string/track_date,videoDetail.releaseDate)}"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/track_author" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/track_price"
+            android:layout_width="0dp"
+            android:text="@{String.format(@string/track_price,videoDetail.trackPrice)}"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/track_date" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
